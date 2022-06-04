@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Category;
+use App\Comment;
+use App\Knowledge;
 
 class PostController extends Controller
 {
-    public function index(Post $post)
+    public function index(Post $post, Knowledge $knowledge)
     {
-        return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
+        return view('posts/index')->with(['posts' => $post->getPaginateByLimit(), 'knowledges' => $knowledge->ramdom()]);
     }
     
     public function show(Post $post)

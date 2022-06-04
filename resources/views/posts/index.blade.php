@@ -8,6 +8,15 @@
     </head>
     <body>
         <h1>レバテックチーム開発</h1>
+        <h2>{{ $knowledges->body }}</h2>
+        <form action = "/update" method="POST">
+            <select name="update">
+                <option value="update">更新順</option>
+                <option value="like">いいね順</option>
+                <option value="like_update">いいね更新順</option>
+            </select>
+            <input type="submit" value="更新"/>
+        </form>
         <h2>投稿一覧ページ</h2>
         <div class='posts'>
             @foreach($posts as $post)
