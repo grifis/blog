@@ -7,16 +7,17 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>レバテックチーム開発</h1>
-        <h2>投稿一覧ページ</h2>
+        <h1>大喜利</h1>
+        <h2>お題一覧</h2>
+        <div>
+            [<a href='/posts/create'>新規作成</a>]
+        </div>
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>
                     <h2 class='title'>
-                        タイトル：<a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
-                    </h2>
-                    <p class='body'>本文：{{ $post->body}}</p>
-                    <p>カテゴリー:<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
+                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                    </h>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}"  method="post" style="display:inline">
                         @csrf
                         @method('DELETE')
@@ -28,9 +29,7 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
-        <div>
-            [<a href='/posts/create'>新規作成</a>]
-        </div>
+        
     </body>
     <script>
         function deletePost(post_id) {
