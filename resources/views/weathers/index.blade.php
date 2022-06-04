@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>レバテックチーム開発</h1>
-        <h2>カテゴリー「{{$posts->first()->category->name}}」の一覧ページ</h2>
+        <h2>カテゴリー「{{$posts->first()->category->}}」の一覧ページ</h2>
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>

@@ -15,7 +15,7 @@
                     <h2 class='title'>
                         タイトル：<a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
-                    <p class='body'>本文：{{ $post->body}}</p>
+                    <p class='body'>本文：{{ $post->body }}</p>
                     <p>カテゴリー:<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}"  method="post" style="display:inline">
                         @csrf
