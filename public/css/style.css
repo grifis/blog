@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+body{
+    font-family: '游ゴシック　Medium';
+    line-height: 1.7;
+    color: #432;
+}
+a{
+    text-decoration: none;
+}
+ing{
+    max-width: 100;
+}
+.link-select{
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.link-select li{
+    margin-right: 36px;
+}
+.link-select a{
+    color: #432;
+}
+.link-select a:hover{
+    color: #0bd;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.home-content {
+    text-align:  center;
+    margin-top:  10%;
+    margin: 0 auto;
+}
+.home-content p {
+     font-size:  1.125rem;
+     margin:  10px 0 42px;
+}
+
+.image1 img, .image2 img, .image3 img{
+    text-align:  center;
+    margin-top:  10%;
+    height: 380px;
+}
+
+#home  {
+     background-image:  url(../image/bg_pattern2_aozora.png);
+     height: 270px;
+    margin-bottom: 40px;
+}
+  #home .home-content {
+         text-align: center;
+}
+
+footer  {
+     background:  #432;
+     text-align:    center;
+     padding:  26px;
+     margin-top: 0px;
+}
+footer p {
+    color:  #fff;
+    font-size:  0.875rem;
+}
+
+.image1 {
+     background-image: url(../image/bg_natural_sougen.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+}
+
+.image2 {
+     background-image: url(../image/bg_rain_natural_sougen.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+}
+
+.image3 {
+     background-image: url(../image/hawaii_rainbow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+}
