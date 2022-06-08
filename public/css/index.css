@@ -1,0 +1,15 @@
+.title {
+    color: blue;
+}
+
+.posting{
+    background-color: white;
+    
+}
+.top-wrapper{
+  padding: 100px 0 5px 0;
+  background-image:url(../images/rain.jpeg);
+  color: blue;
+  background-size: cover;
+  height: 100px;
+}
