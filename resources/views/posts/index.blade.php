@@ -3,20 +3,42 @@
     <head>
         <meta charset="utf-8">
         <title>Blog</title>
+        <link rel="stylesheet" href="{{asset('/css/index.css')}}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>レバテックチーム開発</h1>
+        <div class = "top-wrapper">
+        <h1>雨の日わくわく掲示板</h1>
+        </div>
+        <!--今日の天気を表示してます。-->
+        <div class = "weather">{{ $weather }}</div>
+        <style>
+        .word{
+            color:red;
+            font-style:italic;
+        }
+        </style>
+        <div class = "word">
+            <marquee scrollamount="100"><h2>{{ $knowledges->sentence }}</h2></marquee>
+        </div>
+        <form action = "/update" method="GET">
+            <select name="update">
+                <option name = "select" value="update">更新順</option>
+                <option name = "select" value="like">いいね順</option>
+            </select>
+            <input type="submit" value="更新"/>
+        </form>
         <h2>投稿一覧ページ</h2>
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>
-                    <h2 class='title'>
+                    <h3 class='title'>
                         タイトル：<a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
-                    </h2>
+                    </h3>
                     <p class='body'>本文：{{ $post->body}}</p>
                     <p>カテゴリー:<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
+                    <p><a href="/like/{{ $post->id }}">いいね</a>：{{ $post->like }}（最新のいいね：{{ $post->like_updated_at}}）</p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}"  method="post" style="display:inline">
                         @csrf
                         @method('DELETE')
